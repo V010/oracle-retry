@@ -1,5 +1,5 @@
 name: Oracle VM Retry
-on: # retry auto
+on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
