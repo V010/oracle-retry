@@ -1,10 +1,8 @@
 name: Oracle VM Retry
-
 on:
   schedule:
-    - cron: "*/5 * * * *"   # toutes les 5 minutes
-  workflow_dispatch:          # bouton manuel dans GitHub
-
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 jobs:
   retry:
     runs-on: ubuntu-latest
@@ -14,10 +12,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: pip install oci requests
-
       - name: Run retry script
         env:
           OCI_USER:         ${{ secrets.OCI_USER }}
